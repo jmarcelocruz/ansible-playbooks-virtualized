@@ -1,0 +1,3 @@
+- name: Configure applications-a
+  hosts: applications-a
+  become: true
