@@ -1,3 +1,6 @@
 - name: Configure git-a
   hosts: git-a
   become: true
+  roles:
+    - services/git
+    - services/git-cgit
