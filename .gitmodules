@@ -1,3 +1,6 @@
 [submodule "roles/services"]
 	path = roles/services
 	url = https://github.com/jmarcelocruz/ansible-roles-services.git
+[submodule "roles/infra"]
+	path = roles/infra
+	url = https://github.com/jmarcelocruz/ansible-roles-infra.git
