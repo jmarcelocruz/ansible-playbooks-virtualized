@@ -2,3 +2,4 @@ ungrouped:
   hosts:
     applications-a:
     git-a:
+    networkservices-a:
