@@ -1,3 +1,24 @@
 - name: Configure networkservices-a
   hosts: networkservices-a
   become: true
+  roles:
+    - infra/dnsmasq
+    - infra/interfaces
+  vars:
+    infra_dnsmasq_default_configuration:
+      - |
+        no-resolv
+        server = 1.1.1.1
+        server = 1.0.0.1
+      - |
+        interface = enp1s0
+        dhcp-range = enp1s0,10.10.1.0,10.10.255.254,24h
+      - |
+        dhcp-option = option:router,10.10.0.10
+    infra_interfaces_extra_interfaces:
+      - |
+        auto enp1s0
+        iface enp1s0 inet static
+            address 10.10.0.1
+            netmask 255.255.0.0
+            broadcast 10.10.255.255
